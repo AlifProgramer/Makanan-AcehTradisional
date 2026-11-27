@@ -2,6 +2,8 @@
 
 const WHATSAPP_PENJUAL = "6281234567890";
 const ONGKOS_KIRIM_CONTOH = 10000;
+const JAM_BUKA_CONTOH_WIB = 9;
+const JAM_TUTUP_CONTOH_WIB = 21;
 const STORAGE_KEY = "rasa-aceh-cart-v2";
 
 const products = [
@@ -42,9 +44,31 @@ const modalTitle = document.querySelector("#modal-title");
 const modalEyebrow = document.querySelector("#modal-eyebrow");
 const modalContent = document.querySelector("#modal-content");
 const toastRegion = document.querySelector("#toast-region");
+const siteHeader = document.querySelector(".site-header");
+const businessStatus = document.querySelector("#business-status");
 
 function formatPrice(value) {
   return new Intl.NumberFormat("id-ID", { style: "currency", currency: "IDR", maximumFractionDigits: 0 }).format(value);
+}
+
+function updateBusinessStatus() {
+  const parts = new Intl.DateTimeFormat("en-GB", {
+    timeZone: "Asia/Jakarta",
+    hour: "2-digit",
+    minute: "2-digit",
+    hourCycle: "h23"
+  }).formatToParts(new Date());
+  const hour = Number(parts.find((part) => part.type === "hour").value);
+  const minute = Number(parts.find((part) => part.type === "minute").value);
+  const currentMinutes = hour * 60 + minute;
+  const isOpen = currentMinutes >= JAM_BUKA_CONTOH_WIB * 60 && currentMinutes < JAM_TUTUP_CONTOH_WIB * 60;
+  businessStatus.textContent = isOpen ? "Buka" : "Tutup";
+  businessStatus.classList.toggle("status-open", isOpen);
+  businessStatus.classList.toggle("status-closed", !isOpen);
+}
+
+function updateHeaderScrollState() {
+  siteHeader.classList.toggle("is-scrolled", window.scrollY > 24);
 }
 
 function loadCart() {
@@ -110,6 +134,13 @@ function createImage(product, extraClass) {
   return photo;
 }
 
+function createStoryLink(product) {
+  const link = createElement("a", "text-link product-story-link", "Baca sejarah");
+  link.href = `#cerita-menu-${product.id}`;
+  link.setAttribute("aria-label", `Baca sejarah ${product.name}`);
+  return link;
+}
+
 function createProductCard(product, compact) {
   const article = createElement("article", compact ? "featured-card" : "product-card");
   const imageButton = createElement("button", compact ? "featured-image-button" : "product-image-button");
@@ -129,6 +160,7 @@ function createProductCard(product, compact) {
     body.append(createElement("strong", "featured-price", formatPrice(product.price)));
     body.append(createElement("h3", "", product.name));
     body.append(createElement("p", "featured-description", product.description));
+    body.append(createStoryLink(product));
     const add = createElement("button", "button button-primary featured-add", "Tambah");
     add.type = "button";
     add.setAttribute("aria-label", `Tambah ${product.name} ke keranjang`);
@@ -145,6 +177,7 @@ function createProductCard(product, compact) {
     body.append(name);
     body.append(createElement("p", "product-description", product.description));
     body.append(createElement("p", "spice-level", `Pedas: ${product.spice}`));
+    body.append(createStoryLink(product));
     const bottom = createElement("div", "product-card-bottom");
     bottom.append(createElement("span", "product-price", formatPrice(product.price)));
     const add = createElement("button", product.available ? "button button-primary add-product" : "button button-disabled add-product", product.available ? "Tambah" : "Menu habis");
@@ -200,6 +233,8 @@ function scrollFeatured(direction) {
 function renderStories() {
   storyList.replaceChildren(...products.map((product, index) => {
     const card = createElement("article", "story-card");
+    card.id = `cerita-menu-${product.id}`;
+    card.tabIndex = -1;
     card.append(createElement("span", "story-symbol", ["✦", "❋", "◉", "❧"][index % 4]));
     card.append(createElement("h3", "", product.name));
     card.append(createElement("p", "", product.origin));
@@ -371,6 +406,7 @@ function openProductDetails(product) {
     content.append(createElement("strong", "detail-price", formatPrice(product.price)));
     content.append(createElement("p", "portion-note", `Ukuran contoh: ${product.portion}. Harga dan porsi perlu dikonfirmasi penjual.`));
     const facts = createElement("div", "detail-facts");
+    appendFact(facts, "Tingkat pedas", product.spice);
     appendFact(facts, "Bahan utama", product.ingredients);
     appendFact(facts, "Alergen", product.allergens);
     appendFact(facts, "Cerita singkat · perlu diverifikasi", product.origin);
@@ -571,7 +607,7 @@ function openCheckout(initialDetails) {
     total.querySelector("strong").id = "checkout-total";
     totals.append(subtotal, shipping, total);
     form.append(totals);
-    const note = createElement("p", "form-note", "Informasi ini hanya digunakan untuk menyiapkan pesan pesanan. Periksa kembali sebelum melanjutkan.");
+    const note = createElement("p", "form-note", "Nama, nomor WhatsApp, alamat, dan catatan dipakai untuk menyusun pesan ini; situs tidak menyimpannya. Setelah WhatsApp terbuka, data mengikuti layanan WhatsApp dan pesan baru terkirim saat kamu menekan Kirim.");
     form.append(note);
     const submit = createElement("button", "button button-primary", "Tinjau Ringkasan Pesanan");
     submit.type = "submit";
@@ -702,6 +738,10 @@ function init() {
   renderStories();
   renderCart();
   document.querySelector("#current-year").textContent = String(new Date().getFullYear());
+  updateBusinessStatus();
+  window.setInterval(updateBusinessStatus, 60_000);
+  window.addEventListener("scroll", updateHeaderScrollState, { passive: true });
+  updateHeaderScrollState();
   searchInput.addEventListener("input", renderProducts);
   categoryFilter.addEventListener("change", renderProducts);
   document.querySelectorAll(".filter-chip").forEach((button) => button.addEventListener("click", () => {
@@ -765,7 +805,7 @@ function init() {
       }
     }
   });
-  document.querySelectorAll(".primary-nav a, .mobile-nav a").forEach((link) => {
+  document.querySelectorAll(".primary-nav a, .mobile-nav a, .header-contact").forEach((link) => {
     link.addEventListener("click", () => {
       setActiveNav(link.dataset.nav);
       closeMenu();

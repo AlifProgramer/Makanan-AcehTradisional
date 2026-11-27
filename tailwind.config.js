@@ -5,12 +5,11 @@ module.exports = {
     extend: {
       colors: {
         aceh: {
-          terracotta: "#9A3412",
-          turmeric: "#F59E0B",
-          leaf: "#3F6212",
-          cream: "#FFFBEB",
+          background: "#EFE8DD",
+          accent: "#76ABAE",
+          ink: "#303841",
+          action: "#FF5722",
           white: "#FFFFFF",
-          ink: "#1F2937",
           error: "#B91C1C"
         }
       }
