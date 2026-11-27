@@ -7,18 +7,18 @@ const JAM_TUTUP_CONTOH_WIB = 21;
 const STORAGE_KEY = "rasa-aceh-cart-v2";
 
 const products = [
-  { id: "mie-aceh", name: "Mie Aceh", category: "berat", categoryLabel: "Makanan Berat", price: 28000, gambar: "gambar-aceh/mie-aceh.jpg", description: "Mi tebal dengan racikan rempah, tersedia goreng atau kuah.", spice: "Sedang; tingkat pedas dapat ditanyakan.", portion: "1 porsi", ingredients: "Mi, bawang, cabai, rempah, dan sayuran. Pilihan lauk mengikuti ketersediaan.", allergens: "Dapat mengandung gluten, telur, kedelai, ikan, udang, atau kerang sesuai pilihan lauk.", flavor: "Gurih dan kaya aroma rempah.", origin: "Asal-usul khusus: perlu diverifikasi. Racikan dan pilihan lauk dapat berbeda antarrumah makan.", serving: "Dinikmati sebagai hidangan utama; pilihan goreng atau kuah mengikuti kebiasaan tempat makan.", available: true, featured: true },
+  { id: "mie-aceh", name: "Mie Aceh", category: "berat", categoryLabel: "Makanan Berat", price: 28000, gambar: "gambar-aceh/mie-aceh.jpg", description: "Mi tebal dengan racikan rempah, tersedia goreng atau kuah.", spice: "Sedang; tingkat pedas dapat ditanyakan.", portion: "1 porsi", ingredients: "Mi, bawang, cabai, rempah, dan sayuran. Pilihan lauk mengikuti ketersediaan.", allergens: "Dapat mengandung gluten, telur, kedelai, ikan, udang, atau kerang sesuai pilihan lauk.", flavor: "Gurih dan kaya aroma rempah.", origin: "Asal-usul khusus: perlu diverifikasi. Racikan dan pilihan lauk dapat berbeda antarrumah makan.", serving: "Dinikmati sebagai hidangan utama; pilihan goreng atau kuah mengikuti kebiasaan tempat makan.", sejarah: { asalUsul: "Cerita sedang kami kumpulkan.", bumbuKhas: "Cerita sedang kami kumpulkan.", tradisiPenyajian: "Cerita sedang kami kumpulkan.", sumber: [{ judul: "Turgarini & Abdillah (2017), Introducing Aceh Traditional Culinary as Tourist Attractions", url: "https://doi.org/10.22334/jbhost.v2i1.65", catatan: "Kajian eksploratif menyebut Mie Aceh sebagai salah satu hidangan terpilih; kajian ini bukan catatan asal-usul spesifik." }] }, available: true, featured: true },
   { id: "nasi-gurih", name: "Nasi Gurih", category: "berat", categoryLabel: "Makanan Berat", price: 15000, gambar: "gambar-aceh/nasi-gurih.jpg", photoLabel: "Foto ilustrasi", description: "Nasi beraroma santan dan rempah, cocok dengan lauk.", spice: "Tidak pedas.", portion: "1 porsi", ingredients: "Beras, santan, daun pandan, serai, dan rempah aromatik.", allergens: "Mengandung kelapa; periksa bahan lauk atau taburan tambahan.", flavor: "Lembut, gurih, dan wangi.", origin: "Asal-usul khusus: perlu diverifikasi. Nasi berbumbu hadir dalam beragam kebiasaan makan di Aceh.", serving: "Disajikan sebagai nasi pendamping; lauk dapat berbeda menurut rumah dan daerah.", available: true, featured: false },
-  { id: "ayam-tangkap", name: "Ayam Tangkap", category: "lauk", categoryLabel: "Lauk", price: 35000, gambar: "gambar-aceh/ayam-tangkap.jpg", description: "Ayam berbumbu dengan daun aromatik yang harum.", spice: "Sedang; bumbu mengandung cabai.", portion: "1 porsi lauk", ingredients: "Ayam, daun kari/temurui, daun pandan, bawang, dan rempah.", allergens: "Periksa kemungkinan penggunaan kacang, kedelai, dan bahan lain dalam bumbu.", flavor: "Gurih dan aromatik; daun renyah menjadi pelengkap.", origin: "Asal-usul khusus: perlu diverifikasi. Daun aromatik menjadi ciri penyajian di sejumlah versi.", serving: "Dihidangkan dengan daun aromatik dan dinikmati bersama nasi.", available: true, featured: true },
-  { id: "kuah-beulangong", name: "Kuah Beulangong", category: "lauk", categoryLabel: "Lauk", price: 38000, gambar: "gambar-aceh/kuah-beulangong.jpg", description: "Kuah rempah dan daging, dikenal sebagai sajian kebersamaan.", spice: "Sedang.", portion: "1 porsi", ingredients: "Daging sapi atau kambing, nangka muda, santan, dan rempah.", allergens: "Mengandung santan; tanyakan bahan tambahan dan kemungkinan kontaminasi silang.", flavor: "Gurih, hangat, dan kaya rempah.", origin: "Asal-usul dan kaitan upacara tertentu: perlu diverifikasi bersama sumber daerah dan komunitas.", serving: "Namanya merujuk pada beulangong (belanga); cara masak dan penyajian dapat berbeda.", available: true, featured: false },
+  { id: "ayam-tangkap", name: "Ayam Tangkap", category: "lauk", categoryLabel: "Lauk", price: 35000, gambar: "gambar-aceh/ayam-tangkap.jpg", description: "Ayam berbumbu dengan daun aromatik yang harum.", spice: "Sedang; bumbu mengandung cabai.", portion: "1 porsi lauk", ingredients: "Ayam, daun kari/temurui, daun pandan, bawang, dan rempah.", allergens: "Periksa kemungkinan penggunaan kacang, kedelai, dan bahan lain dalam bumbu.", flavor: "Gurih dan aromatik; daun renyah menjadi pelengkap.", origin: "Asal-usul khusus: perlu diverifikasi. Daun aromatik menjadi ciri penyajian di sejumlah versi.", serving: "Dihidangkan dengan daun aromatik dan dinikmati bersama nasi.", sejarah: { asalUsul: "Cerita sedang kami kumpulkan.", bumbuKhas: "Cerita sedang kami kumpulkan.", tradisiPenyajian: "Cerita sedang kami kumpulkan.", sumber: [{ judul: "Turgarini & Abdillah (2017), Introducing Aceh Traditional Culinary as Tourist Attractions", url: "https://doi.org/10.22334/jbhost.v2i1.65", catatan: "Kajian eksploratif menyebut Ayam Tangkap sebagai salah satu hidangan terpilih; kajian ini bukan catatan asal-usul spesifik." }] }, available: true, featured: true },
+  { id: "kuah-beulangong", name: "Kuah Beulangong", category: "lauk", categoryLabel: "Lauk", price: 38000, gambar: "gambar-aceh/kuah-beulangong.jpg", description: "Kuah rempah dan daging, dikenal sebagai sajian kebersamaan.", spice: "Sedang.", portion: "1 porsi", ingredients: "Daging sapi atau kambing, nangka muda, santan, dan rempah.", allergens: "Mengandung santan; tanyakan bahan tambahan dan kemungkinan kontaminasi silang.", flavor: "Gurih, hangat, dan kaya rempah.", origin: "Asal-usul dan kaitan upacara tertentu: perlu diverifikasi bersama sumber daerah dan komunitas.", serving: "Namanya merujuk pada beulangong (belanga); cara masak dan penyajian dapat berbeda.", sejarah: { asalUsul: "Cerita sedang kami kumpulkan.", bumbuKhas: "Cerita sedang kami kumpulkan.", tradisiPenyajian: "Cerita sedang kami kumpulkan.", sumber: [{ judul: "Turgarini & Abdillah (2017), Introducing Aceh Traditional Culinary as Tourist Attractions", url: "https://doi.org/10.22334/jbhost.v2i1.65", catatan: "Kajian eksploratif menyebut Kuah Beulangong sebagai salah satu hidangan terpilih; kajian ini bukan catatan asal-usul spesifik." }] }, available: true, featured: false },
   { id: "sie-reuboh", name: "Sie Reuboh", category: "lauk", categoryLabel: "Lauk", price: 36000, gambar: "gambar-aceh/Sie Reuboh.jpeg", description: "Olahan daging berbumbu dengan sentuhan rasa asam.", spice: "Sedang hingga pedas.", portion: "1 porsi", ingredients: "Daging sapi, cuka lokal, cabai, bawang, dan racikan bumbu.", allergens: "Tanyakan kemungkinan bahan kedelai atau bahan tambahan pada racikan.", flavor: "Gurih, asam, dan pedas.", origin: "Asal-usul dan teknik tradisional spesifik: perlu diverifikasi melalui sumber lokal.", serving: "Dinikmati bersama nasi; resep dan tingkat rasa berbeda menurut keluarga.", available: true, featured: false },
-  { id: "kuah-pliek-u", name: "Kuah Pliek U", category: "lauk", categoryLabel: "Lauk", price: 30000, gambar: "gambar-aceh/kuah-pliek-u.jpg", description: "Kuah sayur dengan pliek u dan aneka sayuran.", spice: "Sedang.", portion: "1 porsi", ingredients: "Pliek u (olahan kelapa), sayuran, kelapa, cabai, dan rempah.", allergens: "Mengandung kelapa; jenis sayuran dan bahan tambahan perlu ditanyakan.", flavor: "Gurih, harum, dengan rasa khas pliek u.", origin: "Kisah asal-usul spesifik: perlu diverifikasi. Pliek u dikenal sebagai bahan dalam sejumlah masakan Aceh.", serving: "Disajikan sebagai kuah sayur; pilihan sayuran dapat bervariasi.", available: true, featured: false },
+  { id: "kuah-pliek-u", name: "Kuah Pliek U", category: "lauk", categoryLabel: "Lauk", price: 30000, gambar: "gambar-aceh/kuah-pliek-u.jpg", description: "Kuah sayur dengan pliek u dan aneka sayuran.", spice: "Sedang.", portion: "1 porsi", ingredients: "Pliek u (olahan kelapa), sayuran, kelapa, cabai, dan rempah.", allergens: "Mengandung kelapa; jenis sayuran dan bahan tambahan perlu ditanyakan.", flavor: "Gurih, harum, dengan rasa khas pliek u.", origin: "Kisah asal-usul spesifik: perlu diverifikasi. Pliek u dikenal sebagai bahan dalam sejumlah masakan Aceh.", serving: "Disajikan sebagai kuah sayur; pilihan sayuran dapat bervariasi.", sejarah: { asalUsul: "Cerita sedang kami kumpulkan.", bumbuKhas: "Penelitian ini mendata sekitar 35–40 istilah/bahan untuk Kuah Pliek U dan mencatat unsur tumbuhan sebagai mayoritas dalam data yang dikaji. Racikan tiap resep dapat berbeda.", tradisiPenyajian: "Cerita sedang kami kumpulkan.", sumber: [{ judul: "Zurriyati et al. (2023), Aceh Traditional Culinary Kuah Pliek U: How it Sustains Eco-Lexicon Diversity", url: "https://doi.org/10.26811/peuradeun.v11i2.982", catatan: "Studi ekolinguistik tentang keragaman bahan dan pengetahuan terkait Kuah Pliek U." }] }, available: true, featured: false },
   { id: "eungkot-keumamah", name: "Eungkot Keumamah", category: "lauk", categoryLabel: "Lauk", price: 32000, gambar: "gambar-aceh/eungkot-keumamah.jpg", description: "Olahan ikan kayu dengan bumbu khas, resep dapat berbeda.", spice: "Sedang hingga pedas.", portion: "1 porsi lauk", ingredients: "Ikan tongkol yang dikeringkan, cabai, bawang, dan bumbu.", allergens: "Mengandung ikan; periksa bahan tambahan dan kemungkinan kontaminasi silang.", flavor: "Gurih, berbumbu, dan beraroma.", origin: "Kisah asal-usul dan sejarah pemanfaatan khusus: perlu diverifikasi dari sumber setempat.", serving: "Dimasak kembali dengan bumbu; cara olah berbeda antarkeluarga.", available: true, featured: false },
   { id: "timphan", name: "Timphan", category: "kue", categoryLabel: "Kue", price: 8000, gambar: "gambar-aceh/timphan.jpg", description: "Kue lembut berbungkus daun pisang dengan isian manis.", spice: "Tidak pedas.", portion: "1 buah", ingredients: "Tepung ketan, pisang atau labu, santan, dan isian sesuai resep.", allergens: "Dapat mengandung gluten, telur, dan kelapa sesuai adonan serta isi.", flavor: "Manis lembut dan wangi daun pisang.", origin: "Asal-usul khusus: perlu diverifikasi. Timphan dikenal sebagai salah satu kue tradisional Aceh.", serving: "Kerap dijumpai pada waktu berkumpul; waktu dan cara penyajian dapat berbeda.", available: true, featured: true },
   { id: "bhoi", name: "Bhoi", category: "kue", categoryLabel: "Kue", price: 6000, gambar: "gambar-aceh/bhoi (1).jpeg", description: "Kue panggang tradisional; bahan dan bentuk mengikuti resep.", spice: "Tidak pedas.", portion: "1 buah", ingredients: "Umumnya adonan kue berbahan telur, tepung, dan gula; resep penjual perlu dikonfirmasi.", allergens: "Dapat mengandung telur dan gluten.", flavor: "Manis dan ringan.", origin: "Asal-usul dan makna simbolis tertentu: perlu diverifikasi dari sumber lokal.", serving: "Jenis bentuk dan penyajian dapat berbeda menurut pembuat.", available: false, featured: false },
   { id: "martabak-aceh", name: "Martabak Aceh", category: "kue", categoryLabel: "Kue", price: 22000, gambar: "gambar-aceh/martabak-aceh.jpg", description: "Martabak gurih dengan telur dan sayur, dibuat saat dipesan.", spice: "Tidak pedas hingga sedang.", portion: "1 porsi", ingredients: "Adonan tepung, telur, bawang, dan sayuran; isian dapat bervariasi.", allergens: "Mengandung gluten dan telur; kemungkinan bahan susu atau lainnya perlu ditanyakan.", flavor: "Gurih, renyah di luar dan lembut di dalam.", origin: "Asal-usul khusus: perlu diverifikasi. Ragam martabak memiliki banyak versi daerah.", serving: "Disajikan hangat sebagai kudapan atau teman makan.", available: true, featured: false },
   { id: "kopi-sanger", name: "Kopi Sanger", category: "minuman", categoryLabel: "Minuman", price: 18000, gambar: "gambar-aceh/kopi-sanger.jpg", description: "Kopi dengan susu kental manis; takaran dapat dikonfirmasi.", spice: "Tidak pedas.", portion: "1 gelas", ingredients: "Kopi, air, dan susu kental manis sesuai racikan.", allergens: "Mengandung susu; dapat mengandung laktosa.", flavor: "Kopi kuat dengan rasa manis dan creamy.", origin: "Kisah asal-usul nama dan racikan: perlu diverifikasi dari sumber setempat.", serving: "Disajikan hangat atau dingin sesuai pilihan penjual.", available: true, featured: false },
-  { id: "kopi-gayo", name: "Kopi Gayo", category: "minuman", categoryLabel: "Minuman", price: 18000, gambar: "gambar-aceh/kopi-gayo.jpg", description: "Seduhan kopi dari kawasan Gayo, nikmat hangat atau dingin.", spice: "Tidak pedas.", portion: "1 gelas", ingredients: "Kopi dan air; gula atau susu sesuai pilihan.", allergens: "Kopi murni tidak mengandung alergen umum; susu dapat mengandung laktosa.", flavor: "Aroma kopi dengan karakter seduhan yang beragam.", origin: "Asal-usul kebun, varietas, dan klaim produksi spesifik: perlu diverifikasi dari produsen.", serving: "Diseduh sesuai metode penjual dan dinikmati bersama.", available: true, featured: true }
+  { id: "kopi-gayo", name: "Kopi Gayo", category: "minuman", categoryLabel: "Minuman", price: 18000, gambar: "gambar-aceh/kopi-gayo.jpg", description: "Seduhan kopi dari kawasan Gayo, nikmat hangat atau dingin.", spice: "Tidak pedas.", portion: "1 gelas", ingredients: "Kopi dan air; gula atau susu sesuai pilihan.", allergens: "Kopi murni tidak mengandung alergen umum; susu dapat mengandung laktosa.", flavor: "Aroma kopi dengan karakter seduhan yang beragam.", origin: "Asal-usul kebun, varietas, dan klaim produksi spesifik: perlu diverifikasi dari produsen.", serving: "Diseduh sesuai metode penjual dan dinikmati bersama.", sejarah: { asalUsul: "Penelitian ini mendokumentasikan kuliner Gayo Lut di Mude Nosar; penelitian tersebut tidak memverifikasi asal-usul setiap produk Kopi Gayo.", bumbuKhas: "Cerita sedang kami kumpulkan.", tradisiPenyajian: "Cerita sedang kami kumpulkan.", sumber: [{ judul: "Pangaribuan (2024), Gayo Lut traditional cuisines for culinary-based ecotourism in Central Aceh", url: "https://doi.org/10.1088/1755-1315/1366/1/012054", catatan: "Studi dokumentasi kuliner tradisional Gayo Lut; konteks lokasi penelitian tidak otomatis berlaku untuk semua produk." }] }, available: true, featured: true }
 ];
 
 const productMap = new Map(products.map((product) => [product.id, product]));
@@ -38,7 +38,6 @@ const emptyState = document.querySelector("#empty-state");
 const resultsCount = document.querySelector("#results-count");
 const cartPanel = document.querySelector("#cart-panel");
 const scrim = document.querySelector("#page-scrim");
-const modalBackdrop = document.querySelector("#modal-backdrop");
 const modal = document.querySelector("#app-modal");
 const modalTitle = document.querySelector("#modal-title");
 const modalEyebrow = document.querySelector("#modal-eyebrow");
@@ -68,7 +67,7 @@ function updateBusinessStatus() {
 }
 
 function updateHeaderScrollState() {
-  siteHeader.classList.toggle("is-scrolled", window.scrollY > 24);
+  siteHeader.classList.toggle("is-scrolled", window.scrollY > 40);
 }
 
 function loadCart() {
@@ -141,6 +140,14 @@ function createStoryLink(product) {
   return link;
 }
 
+function createProductDetailButton(product) {
+  const detail = createElement("button", "button button-outline product-detail-button", "Detail");
+  detail.type = "button";
+  detail.setAttribute("aria-label", `Lihat detail ${product.name}`);
+  detail.addEventListener("click", () => openProductDetails(product));
+  return detail;
+}
+
 function createProductCard(product, compact) {
   const article = createElement("article", compact ? "featured-card" : "product-card");
   const imageButton = createElement("button", compact ? "featured-image-button" : "product-image-button");
@@ -161,11 +168,14 @@ function createProductCard(product, compact) {
     body.append(createElement("h3", "", product.name));
     body.append(createElement("p", "featured-description", product.description));
     body.append(createStoryLink(product));
+    const actions = createElement("div", "featured-card-actions");
+    actions.append(createProductDetailButton(product));
     const add = createElement("button", "button button-primary featured-add", "Tambah");
     add.type = "button";
     add.setAttribute("aria-label", `Tambah ${product.name} ke keranjang`);
     add.addEventListener("click", () => addToCart(product.id, 1, ""));
-    body.append(add);
+    actions.append(add);
+    body.append(actions);
   } else {
     const top = createElement("div", "product-card-top");
     top.append(createElement("span", "category-tag", product.categoryLabel));
@@ -180,12 +190,15 @@ function createProductCard(product, compact) {
     body.append(createStoryLink(product));
     const bottom = createElement("div", "product-card-bottom");
     bottom.append(createElement("span", "product-price", formatPrice(product.price)));
+    const actions = createElement("div", "product-card-actions");
+    actions.append(createProductDetailButton(product));
     const add = createElement("button", product.available ? "button button-primary add-product" : "button button-disabled add-product", product.available ? "Tambah" : "Menu habis");
     add.type = "button";
     add.disabled = !product.available;
     add.setAttribute("aria-label", product.available ? `Tambah ${product.name} ke keranjang` : `${product.name} sedang habis`);
     add.addEventListener("click", () => addToCart(product.id, 1, ""));
-    bottom.append(add);
+    actions.append(add);
+    bottom.append(actions);
     body.append(bottom);
   }
   article.append(body);
@@ -370,24 +383,24 @@ function closeCart() {
   cartPanel.classList.remove("is-open");
   cartPanel.setAttribute("aria-hidden", "true");
   scrim.hidden = true;
-  if (modalBackdrop.hidden) document.body.classList.remove("no-scroll");
+  if (!modal.open) document.body.classList.remove("no-scroll");
   if (wasOpen && lastFocusedElement && typeof lastFocusedElement.focus === "function") lastFocusedElement.focus();
 }
 
 function openModal(title, eyebrow, contentBuilder) {
-  lastFocusedElement = document.activeElement;
+  if (!modal.open) lastFocusedElement = document.activeElement;
   modalTitle.textContent = title;
   modalEyebrow.textContent = eyebrow;
   modalContent.replaceChildren();
   contentBuilder(modalContent);
-  modalBackdrop.hidden = false;
+  if (!modal.open) modal.showModal();
   document.body.classList.add("no-scroll");
   modal.focus();
 }
 
 function closeModal() {
-  if (modalBackdrop.hidden) return;
-  modalBackdrop.hidden = true;
+  if (!modal.open) return;
+  modal.close();
   modalContent.replaceChildren();
   if (!cartPanel.classList.contains("is-open")) document.body.classList.remove("no-scroll");
   if (lastFocusedElement && typeof lastFocusedElement.focus === "function") lastFocusedElement.focus();
@@ -403,20 +416,46 @@ function appendFact(parent, heading, detail) {
 function openProductDetails(product) {
   openModal(product.name, `${product.categoryLabel} · Harga contoh`, (content) => {
     content.append(createImage(product, "detail-modal-image"));
+    content.append(createElement("p", "detail-description", product.description));
     content.append(createElement("strong", "detail-price", formatPrice(product.price)));
     content.append(createElement("p", "portion-note", `Ukuran contoh: ${product.portion}. Harga dan porsi perlu dikonfirmasi penjual.`));
     const facts = createElement("div", "detail-facts");
     appendFact(facts, "Tingkat pedas", product.spice);
     appendFact(facts, "Bahan utama", product.ingredients);
     appendFact(facts, "Alergen", product.allergens);
-    appendFact(facts, "Cerita singkat · perlu diverifikasi", product.origin);
     content.append(facts);
-    if (!product.available) {
-      content.append(createElement("p", "sold-out-message", "Menu ini sedang habis. Silakan pilih menu lain."));
-      return;
+    const story = product.sejarah || {
+      asalUsul: "Cerita sedang kami kumpulkan.",
+      bumbuKhas: "Cerita sedang kami kumpulkan.",
+      tradisiPenyajian: "Cerita sedang kami kumpulkan.",
+      sumber: []
+    };
+    const storySection = createElement("section", "detail-story");
+    storySection.append(createElement("h3", "", "Sejarah dan Cerita"));
+    appendFact(storySection, "Asal-usul", story.asalUsul || "Cerita sedang kami kumpulkan.");
+    appendFact(storySection, "Bumbu Khas", story.bumbuKhas || "Cerita sedang kami kumpulkan.");
+    appendFact(storySection, "Tradisi Penyajian", story.tradisiPenyajian || "Cerita sedang kami kumpulkan.");
+    content.append(storySection);
+    const sourceSection = createElement("section", "detail-sources");
+    sourceSection.append(createElement("h3", "", "Sumber"));
+    if (Array.isArray(story.sumber) && story.sumber.length) {
+      story.sumber.forEach((source) => {
+        const sourceItem = createElement("div", "detail-source");
+        const sourceLink = createElement("a", "detail-source-link", source.judul);
+        sourceLink.href = source.url;
+        sourceLink.target = "_blank";
+        sourceLink.rel = "noopener noreferrer";
+        sourceItem.append(sourceLink);
+        if (source.catatan) sourceItem.append(createElement("p", "", source.catatan));
+        sourceSection.append(sourceItem);
+      });
+    } else {
+      sourceSection.append(createElement("p", "detail-source-empty", "Cerita sedang kami kumpulkan."));
     }
+    content.append(sourceSection);
     const form = createElement("form", "detail-order-form");
     form.noValidate = true;
+    if (!product.available) form.append(createElement("p", "sold-out-message", "Menu ini sedang habis. Silakan pilih menu lain."));
     const quantityGroup = createElement("div", "form-field");
     const quantityLabel = createElement("label", "", "Jumlah porsi");
     quantityLabel.htmlFor = "detail-quantity";
@@ -442,9 +481,11 @@ function openProductDetails(product) {
     form.append(quantityGroup, noteGroup, error);
     const add = createElement("button", "button button-primary", "Masukkan Keranjang");
     add.type = "submit";
+    add.disabled = !product.available;
     form.append(add);
     form.addEventListener("submit", (event) => {
       event.preventDefault();
+      if (!product.available) return;
       const count = Number(quantity.value);
       if (!Number.isSafeInteger(count) || count < 1 || count > 99) {
         error.textContent = "Pilih jumlah antara 1 dan 99 porsi.";
@@ -764,15 +805,27 @@ function init() {
   document.querySelector(".checkout-open").addEventListener("click", () => openCheckout());
   scrim.addEventListener("click", closeCart);
   document.querySelector(".modal-close").addEventListener("click", closeModal);
-  modalBackdrop.addEventListener("click", (event) => {
-    if (event.target === modalBackdrop) closeModal();
+  modal.addEventListener("click", (event) => {
+    if (event.target !== modal) return;
+    const bounds = modal.getBoundingClientRect();
+    const clickedInside = event.clientX >= bounds.left && event.clientX <= bounds.right
+      && event.clientY >= bounds.top && event.clientY <= bounds.bottom;
+    if (!clickedInside) closeModal();
+  });
+  modal.addEventListener("cancel", (event) => {
+    event.preventDefault();
+    closeModal();
   });
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
-      if (!modalBackdrop.hidden) closeModal();
-      else if (cartPanel.classList.contains("is-open")) closeCart();
+      if (modal.open) {
+        event.preventDefault();
+        closeModal();
+      } else if (cartPanel.classList.contains("is-open")) {
+        closeCart();
+      }
     }
-    if (event.key === "Tab" && !modalBackdrop.hidden) {
+    if (event.key === "Tab" && modal.open) {
       const focusable = Array.from(modal.querySelectorAll("a[href], button:not([disabled]), input:not([disabled]), textarea:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex='-1'])"))
         .filter((element) => !element.closest("[hidden]"));
       if (!focusable.length) {
@@ -790,7 +843,7 @@ function init() {
         first.focus();
       }
     }
-    if (event.key === "Tab" && cartPanel.classList.contains("is-open") && modalBackdrop.hidden) {
+    if (event.key === "Tab" && cartPanel.classList.contains("is-open") && !modal.open) {
       const focusable = Array.from(cartPanel.querySelectorAll("a[href], button:not([disabled]), input:not([disabled]), textarea:not([disabled])"));
       if (focusable.length) {
         const first = focusable[0];
