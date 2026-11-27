@@ -5,11 +5,13 @@ module.exports = {
     extend: {
       colors: {
         aceh: {
-          maroon: "#7F1D1D",
-          gold: "#D4A017",
-          green: "#14532D",
-          cream: "#FFF8EB",
-          ink: "#1F2937"
+          terracotta: "#9A3412",
+          turmeric: "#F59E0B",
+          leaf: "#3F6212",
+          cream: "#FFFBEB",
+          white: "#FFFFFF",
+          ink: "#1F2937",
+          error: "#B91C1C"
         }
       }
     }
