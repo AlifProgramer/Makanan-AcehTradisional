@@ -740,12 +740,6 @@ h1, h2, h3 { color: var(--text); }
 .product-story-link { min-height: 48px; align-self: flex-start; margin: 2px 0 8px; }
 .featured-card .product-story-link { margin: 0 0 8px; font-size: .88rem; }
 .story-card[id] { scroll-margin-top: 112px; }
-.story-sources { margin-top: 48px; }
-.story-sources h2 { font-size: clamp(1.45rem, 2.5vw, 1.8rem); }
-.story-sources > ul { display: grid; gap: 12px; margin: 20px 0 0; padding: 0; list-style: none; }
-.story-sources li { display: grid; gap: 6px; padding: 16px; border: 1px solid var(--line); border-radius: 14px; background: #FFFFFF; }
-.story-sources li a { color: var(--text); font-weight: 750; text-decoration-thickness: 1px; text-underline-offset: 3px; }
-.story-sources li span { color: var(--text); font-size: .92rem; }
 .primary-nav > a:focus-visible, .header-contact:focus-visible, .header-cart:focus-visible,
 .button:focus-visible, .add-button:focus-visible, .filter-chip:focus-visible,
 .category-shortcut:focus-visible, .featured-grid:focus-visible { outline-color: #303841; }
@@ -775,7 +769,6 @@ h1, h2, h3 { color: var(--text); }
   .mobile-nav a.is-active, .mobile-nav button.is-active { background: #303841; color: #FFFFFF; }
   .about-us { margin-top: 52px; padding: 20px; }
   .story-card[id] { scroll-margin-top: 88px; }
-  .story-sources { margin-top: 38px; }
 }
 @media (max-width: 380px) {
   .header-inner { padding-inline: 9px; }
