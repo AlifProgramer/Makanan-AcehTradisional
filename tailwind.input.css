@@ -850,6 +850,7 @@ html { scroll-padding-top: 110px; }
 @media (max-width: 680px) {
   html { scroll-padding-top: 110px; }
   main section[id], .story-card[id] { scroll-margin-top: 110px; }
+  .site-header, .site-header.is-scrolled { top: 0; width: 100%; margin: 0; }
   .site-header { height: 78px; }
   .site-header::before { width: calc(100% - 24px); }
   .site-header.is-scrolled::before { width: 100%; height: 94px; }
