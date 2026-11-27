@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'self'; upgrade-insecure-requests">
+  <meta name="theme-color" content="#fbf5e9">
+  <meta name="description" content="Kenali cita rasa, kisah, dan pesan makanan khas Aceh dengan mudah.">
+  <title>Makanan Aceh Tradisional — Rasa, Cerita, dan Sajian</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#konten">Lewati ke konten</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#beranda" aria-label="Makanan Aceh Tradisional, beranda">
+        <img src="assets/favicon.svg" alt="" width="42" height="42">
+        <span><strong>Rasa Aceh</strong><small>Warisan di setiap sajian</small></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Buka menu navigasi">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="primary-nav" id="primary-nav" aria-label="Navigasi utama">
+        <a href="#beranda">Beranda</a>
+        <a href="#produk">Menu</a>
+        <a href="#tentang">Cerita Kami</a>
+        <button class="button button-small button-outline cart-open" type="button">
+          Keranjang <span class="cart-count" aria-label="0 item">0</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="konten">
+    <section class="hero section-pad" id="beranda" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-mark"></span> Dari dapur Aceh, untuk meja Anda</p>
+          <h1 id="hero-title">Rasa yang kaya.<br><span>Cerita yang hidup.</span></h1>
+          <p class="hero-intro">Jelajahi hidangan penuh rempah dan kehangatan dari Tanah Rencong. Pilih favoritmu, lalu pesan dengan mudah.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#produk">Pesan Sekarang <span aria-hidden="true">→</span></a>
+            <a class="button button-text" href="#tentang">Baca Sejarah <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="hero-note">
+            <span class="note-icon" aria-hidden="true">✦</span>
+            <p><strong>Resep penuh makna</strong><br><span>Dikenal lintas generasi, disajikan dengan cinta.</span></p>
+          </div>
+        </div>
+        <div class="hero-art-wrap">
+          <img class="hero-art" src="assets/aceh-hero.svg" alt="Ilustrasi sajian Mie Aceh dengan rempah dan daun" width="640" height="540">
+          <div class="hero-stamp"><span>RASA</span><strong>ACEH</strong><small>• ASLI • HANGAT •</small></div>
+          <div class="hero-caption"><span class="caption-dot"></span> Cita rasa yang tak terlupakan</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="featured section-pad" aria-labelledby="featured-title">
+      <div class="container">
+        <div class="section-heading">
+          <div><p class="eyebrow">Pilihan istimewa</p><h2 id="featured-title">Favorit yang selalu dirindukan</h2></div>
+          <a class="text-link" href="#produk">Lihat semua menu <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="featured-grid" id="featured-list"></div>
+      </div>
+    </section>
+
+    <section class="ordering section-pad" aria-labelledby="ordering-title">
+      <div class="container ordering-inner">
+        <div class="ordering-heading">
+          <p class="eyebrow eyebrow-light">Pesan tanpa ribet</p>
+          <h2 id="ordering-title">Dari pilihanmu<br>ke meja makan.</h2>
+          <p>Hidangan favorit hanya beberapa langkah lagi.</p>
+        </div>
+        <ol class="steps">
+          <li><span class="step-number">01</span><div><h3>Pilih menu</h3><p>Temukan hidangan yang paling menggugah selera.</p></div></li>
+          <li><span class="step-number">02</span><div><h3>Isi detail pesanan</h3><p>Masukkan kontak dan alamat tujuanmu.</p></div></li>
+          <li><span class="step-number">03</span><div><h3>Kirim via WhatsApp</h3><p>Konfirmasi pesanan langsung dengan penjual.</p></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="products section-pad" id="produk" aria-labelledby="products-title">
+      <div class="container">
+        <div class="section-heading products-heading">
+          <div><p class="eyebrow">Dari Aceh, dengan rasa</p><h2 id="products-title">Temukan menu favoritmu</h2><p class="section-subtitle">Setiap hidangan punya cerita dan bumbu istimewanya sendiri.</p></div>
+        </div>
+        <div class="catalog-tools">
+          <label class="search-wrap"><span class="sr-only">Cari menu</span><span class="search-icon" aria-hidden="true">⌕</span><input id="product-search" type="search" placeholder="Cari nama hidangan..." autocomplete="off"></label>
+          <label class="filter-wrap"><span class="sr-only">Filter kategori</span><select id="category-filter"><option value="semua">Semua kategori</option><option value="utama">Hidangan utama</option><option value="pendamping">Pendamping</option><option value="minuman">Minuman</option></select></label>
+        </div>
+        <p class="results-count" id="results-count" aria-live="polite"></p>
+        <div class="product-grid" id="product-list"></div>
+        <div class="empty-state" id="empty-state" hidden>
+          <span aria-hidden="true">⌕</span><h3>Menu belum ditemukan</h3><p>Coba kata kunci lain atau pilih kategori berbeda.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="about section-pad" id="tentang" aria-labelledby="about-title">
+      <div class="container about-grid">
+        <div class="about-visual">
+          <img src="assets/aceh-spices.svg" alt="Ilustrasi rempah, daun pandan, dan lesung" width="560" height="480" loading="lazy">
+          <div class="about-quote"><span aria-hidden="true">“</span><p>Di meja makan, rasa menjadi cara kita saling bercerita.</p></div>
+        </div>
+        <div class="about-copy">
+          <p class="eyebrow">Mengenal warisan rasa</p>
+          <h2 id="about-title">Lebih dari sekadar hidangan.</h2>
+          <p class="about-lead">Kuliner Aceh tumbuh dari pertemuan banyak budaya, kekayaan rempah, dan kebiasaan makan bersama.</p>
+          <p>Racikan bumbu yang kuat, sajian untuk ramai-ramai, serta resep yang diwariskan dalam keluarga membuat setiap hidangan terasa akrab sekaligus istimewa. Cerita asal-usul beberapa menu memiliki beragam versi; kami menyampaikannya dengan hati-hati tanpa menetapkan kisah yang belum terverifikasi sebagai fakta.</p>
+          <a class="text-link" href="#cerita-menu">Kenali cerita tiap hidangan <span aria-hidden="true">↓</span></a>
+        </div>
+      </div>
+      <div class="container food-stories" id="cerita-menu">
+        <div class="section-heading story-heading"><div><p class="eyebrow">Rasa dan tradisi</p><h2>Setiap menu, punya makna</h2></div></div>
+        <div class="story-grid" id="story-list"></div>
+      </div>
+    </section>
+
+    <section class="faq section-pad" aria-labelledby="faq-title">
+      <div class="container faq-layout">
+        <div><p class="eyebrow">Ada yang ingin ditanyakan?</p><h2 id="faq-title">Pertanyaan umum</h2><p class="section-subtitle">Informasi singkat sebelum kamu memesan.</p></div>
+        <div class="faq-list">
+          <details><summary>Bagaimana cara memesan makanan?</summary><p>Pilih menu dan jumlahnya, buka keranjang, lalu isi nama, nomor WhatsApp, dan alamat. Ringkasan pesanan akan disiapkan untuk dikirim ke WhatsApp penjual.</p></details>
+          <details><summary>Apakah harga sudah termasuk ongkos kirim?</summary><p>Harga yang tampil adalah contoh harga makanan. Biaya pengantaran dan ketersediaan menu dikonfirmasi langsung oleh penjual melalui WhatsApp.</p></details>
+          <details><summary>Bagaimana jika saya memiliki alergi?</summary><p>Informasi alergen umum tersedia di detail menu. Resep dan kemungkinan kontaminasi silang dapat berbeda; sampaikan alergi secara langsung kepada penjual sebelum memesan.</p></details>
+          <details><summary>Apakah kisah asal setiap makanan sudah pasti?</summary><p>Tidak semua asal-usul kuliner memiliki catatan tunggal yang terverifikasi. Kami membedakan konteks budaya yang umum dikenal dari kisah asal yang belum pasti.</p></details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="brand footer-brand" href="#beranda"><img src="assets/favicon.svg" alt="" width="38" height="38"><span><strong>Rasa Aceh</strong><small>Warisan di setiap sajian</small></span></a>
+      <p>Merawat cita rasa, berbagi cerita.<br><span>Harga di situs ini adalah contoh dan dapat berubah.</span></p>
+      <a class="footer-top" href="#beranda">Kembali ke atas ↑</a>
+    </div>
+    <div class="container footer-bottom"><span>© <span id="current-year"></span> Makanan Aceh Tradisional</span><span>Dibuat dengan rasa hormat pada tradisi.</span></div>
+  </footer>
+
+  <aside class="cart-panel" id="cart-panel" aria-label="Keranjang belanja" aria-hidden="true">
+    <div class="cart-panel-head"><div><p class="eyebrow">Pilihanmu</p><h2>Keranjang</h2></div><button class="icon-button cart-close" type="button" aria-label="Tutup keranjang">×</button></div>
+    <div class="cart-items" id="cart-items"></div>
+    <div class="cart-empty" id="cart-empty"><span aria-hidden="true">♡</span><h3>Belum ada pilihan</h3><p>Yuk, temukan hidangan favoritmu.</p><button class="button button-primary cart-browse" type="button">Jelajahi menu</button></div>
+    <div class="cart-panel-foot" id="cart-panel-foot">
+      <div class="cart-total"><span>Total sementara</span><strong id="cart-total">Rp0</strong></div>
+      <button class="button button-primary checkout-open" type="button">Lanjut Pesan <span aria-hidden="true">→</span></button>
+      <p>Biaya kirim dikonfirmasi oleh penjual.</p>
+    </div>
+  </aside>
+  <div class="page-scrim" id="page-scrim" hidden></div>
+
+  <div class="modal-backdrop" id="modal-backdrop" hidden>
+    <section class="modal" id="app-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" tabindex="-1">
+      <div class="modal-head"><div><p class="eyebrow" id="modal-eyebrow">Informasi</p><h2 id="modal-title"></h2></div><button class="icon-button modal-close" type="button" aria-label="Tutup dialog">×</button></div>
+      <div class="modal-content" id="modal-content"></div>
+    </section>
+  </div>
+  <div class="toast-region" id="toast-region" aria-live="polite" aria-atomic="true"></div>
+</body>
+</html>
